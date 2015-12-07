@@ -47,7 +47,7 @@ export default EventDispatcher.extend({
     // coalesce all the events
     let events = merge({}, defaultHammerEvents);
     list.forEach((name) => {
-      let recognizer = getOwner(this).lookupFactory('ember-gesture:recognizers/' + name);
+      let recognizer = getOwner(this)._lookupFactory('ember-gesture:recognizers/' + name);
       if (recognizer && !recognizer.ignoreEvents) {
         addEvent(events, recognizer.recognizer, name);
       }

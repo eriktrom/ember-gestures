@@ -70,7 +70,7 @@ export default Service.extend({
       }
 
       let path = `ember-gesture:recognizers/${name}`;
-      let details = getOwner(this).lookupFactory(path);
+      let details = getOwner(this)._lookupFactory(path);
       if (details) {
         resolve(this.makeRecognizer(name, details));
         return;
